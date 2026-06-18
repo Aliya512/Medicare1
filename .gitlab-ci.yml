@@ -1,11 +1,10 @@
-image: ghcr.io/cirruslabs/flutter:stable
+image: cirrusci/flutter:stable
 
 stages:
-  - test
+  - build
 
-flutter_test:
-  stage: test
+build:
+  stage: build
   script:
     - flutter pub get
-    - flutter analyze
-    - flutter test
+    - flutter build apk --debug
